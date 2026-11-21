@@ -1,4 +1,5 @@
 #include <iostream>
+#include <iomanip>
 #include <string>
 
 using namespace std;
@@ -11,6 +12,32 @@ struct Transaksi {
 };
 
 const int MAX_TRANSAKSI = 100;
+
+void tampilkanRiwayat(Transaksi daftarTransaksi[], int jumlahTransaksi) {
+    cout << "\n==================== RIWAYAT TRANSAKSI ====================\n";
+    
+    if (jumlahTransaksi == 0) {
+        cout << "Belum ada data transaksi yang tercatat.\n";
+        return;
+    }
+
+    cout << left << setw(5)  << "No"
+         << left << setw(14) << "Jenis"
+         << left << setw(22) << "Nama Transaksi"
+         << left << setw(13) << "Kategori"
+         << left << setw(15) << "Nominal" << "\n";
+    cout << "-------------------------------------------------------------------\n";
+
+    for (int i = 0; i < jumlahTransaksi; i++) {
+        cout << left << setw(5)  << (i + 1)
+             << left << setw(14) << daftarTransaksi[i].jenis
+             << left << setw(22) << daftarTransaksi[i].nama
+             << left << setw(13) << daftarTransaksi[i].kategori
+             << "Rp" << daftarTransaksi[i].nominal << "\n";
+    }
+    cout << "===================================================================\n";
+}
+
 
 void tambahPemasukan(Transaksi daftarTransaksi[], int &jumlahTransaksi) {
     char ulangInput;
