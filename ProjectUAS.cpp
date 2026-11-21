@@ -3,6 +3,6 @@
 #include <string>
 
 int main() {
-cout << "Hello World";
+    cout << "Hello World";
 }
 
