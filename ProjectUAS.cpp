@@ -3,17 +3,15 @@
 
 using namespace std;
 
-// 1. Mendefinisikan struct Transaksi
 struct Transaksi {
-    string jenis;     // "Pemasukan" atau "Pengeluaran"
-    string nama;      // Nama/keterangan transaksi
-    string kategori;  // "Kebutuhan", "Keinginan", atau "-" (untuk pemasukan)
+    string jenis;
+    string nama;
+    string kategori;
     long long nominal;
 };
 
 const int MAX_TRANSAKSI = 100;
 
-// 3a. Fungsi tambahPemasukan()
 void tambahPemasukan(Transaksi daftarTransaksi[], int &jumlahTransaksi) {
     char ulangInput;
     do {
@@ -46,7 +44,6 @@ void tambahPemasukan(Transaksi daftarTransaksi[], int &jumlahTransaksi) {
     } while (ulangInput == 'y' || ulangInput == 'Y');
 }
 
-// 3b. Fungsi tambahPengeluaran() dengan kategori Kebutuhan vs Keinginan
 void tambahPengeluaran(Transaksi daftarTransaksi[], int &jumlahTransaksi) {
     char ulangInput;
     do {
@@ -99,12 +96,10 @@ void tambahPengeluaran(Transaksi daftarTransaksi[], int &jumlahTransaksi) {
 }
 
 int main() {
-    // 1. Deklarasi Array of Struct
     Transaksi daftarTransaksi[MAX_TRANSAKSI];
     int jumlahTransaksi = 0;
     int pilihanMenu = 0;
 
-    // 2. Kerangka perulangan menu utama (do-while & switch-case)
     do {
         cout << "\n================ MENU UTAMA ================\n";
         cout << "1. Input Pemasukan\n";
@@ -124,13 +119,10 @@ int main() {
                 tambahPengeluaran(daftarTransaksi, jumlahTransaksi);
                 break;
             case 3:
-                // Panggil fungsi tampilkanRiwayat() dari Anak 2
                 break;
             case 4:
-                // Panggil fungsi ringkasanSaldo() dari Anak 3
                 break;
             case 5:
-                // Panggil fungsi urutkanPengeluaran() dari Anak 3
                 break;
             case 6:
                 cout << "Terima kasih telah menggunakan program ini.\n";
